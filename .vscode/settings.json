@@ -1,11 +1,16 @@
 {
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++ -std=c++17 \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\""
+        "cpp": "g++ -std=c++17 $fullFileName -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt",
+        "c": "gcc $fullFileName -o /tmp/$fileNameWithoutExt && /tmp/$fileNameWithoutExt"
     },
     "code-runner.runInTerminal": true,
     "code-runner.clearPreviousOutput": true,
     "code-runner.saveFileBeforeRun": true,
     "code-runner.ignoreSelection": true,
     "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.default.compilerPath": "/usr/bin/clang++"
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++",
+    "files.exclude": {
+        "**/*.dSYM": true,
+        "**/*.out": true
+    }
 }
