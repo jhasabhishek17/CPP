@@ -1,0 +1,11 @@
+{
+    "code-runner.executorMap": {
+        "cpp": "cd $dir && g++ -std=c++17 \"$fileName\" -o \"$fileNameWithoutExt\" && \"$dir$fileNameWithoutExt\""
+    },
+    "code-runner.runInTerminal": true,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.saveFileBeforeRun": true,
+    "code-runner.ignoreSelection": true,
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.compilerPath": "/usr/bin/clang++"
+}
