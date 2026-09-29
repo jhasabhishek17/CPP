@@ -299,10 +299,80 @@ void printArr(int *arr, int n){
 // Buy and Sell stocks
 
 
+// void maxProfit(int *prices, int n){
+//     int bestBuy[10000];
+//     bestBuy[0] = INT_MAX;
+
+//     for(int i=1; i<n;i++){
+//         bestBuy[i] = min(bestBuy[i-1],prices[i-1]);
+//         cout << bestBuy[i] << ",";
+//     }
+//     int maxProfit =0;
+//     for(int i=0; i<n; i++){
+//         int currProfit = prices[i] - bestBuy[i];
+//         maxProfit = max(maxProfit,currProfit);
+//     }
+//     cout <<"max profit = "<< maxProfit<<endl;
+// }
 
 
+// int main(){
+//     int prices[6] = {7,1,5,3,6,4};
+//     int n = sizeof(prices)/sizeof(int);
+
+//     maxProfit(prices,n);
+//     return 0;
+// }
+
+
+// Trapping Rainwater
+
+
+int trap(int *heights, int n){
+    
+    // leftMax[i] stores the maximum height from index 0 to i
+    // rightMax[i] stores the maximum height from index i to n-1
+    int leftMax[20000], rightMax[20000];
+
+    // First element has no building on its left
+    leftMax[0] = heights[0];
+
+    // Last element has no building on its right
+    rightMax[n-1] = heights[n-1];
+
+    // Build leftMax array from left to right
+    for (int i=1; i<n; i++){
+        leftMax[i] = max(leftMax[i-1], heights[i]);
+    }
+
+    // Build rightMax array from right to left
+    for (int i=n-2; i>=0; i--){
+        rightMax[i] = max(rightMax[i+1], heights[i]);
+    }
+
+    int waterTrapped = 0;
+
+    // Calculate water trapped at each index
+    for (int i=0; i<n; i++){
+
+        // Water = minimum of leftMax and rightMax - current height
+        int currWater = min(leftMax[i], rightMax[i]) - heights[i];
+
+        if(currWater > 0){
+            waterTrapped += currWater;
+        }
+    }
+
+    cout << "water trapped = " << waterTrapped << endl;
+
+    return waterTrapped;
+}
 
 int main(){
+    int heights[7] ={4,2,0,6,3,2,5};
+    int n = sizeof(heights)/sizeof(int);
+     
+    trap(heights,n);
 
     return 0;
 }
