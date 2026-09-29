@@ -186,7 +186,123 @@ void printArr(int *arr, int n){
 //     return 0;
 // }
 
+// Print subarrays
 
 
-// Time complexity of Binary search
+// void printSubarrays(int *arr, int n){
+//     for(int start =0; start<n; start++){
+//         for (int end=start; end<n; end++){
+//            // cout <<"(" <<start << "," <<end << ")";
+//            for (int i =start; i<=end; i++){
+//             cout << arr[i];
+//            }
+//            cout << ",";
+//         }
+//         cout << endl;
+//     }
+// }
 
+// int main(){
+//     int arr[5] ={1,2,3,4,5};
+//     int n =5;
+
+//     printSubarrays(arr,n);
+//     return 0;
+// }
+
+
+
+// Max subarray sum
+// Brute force approach
+
+
+// void maxSubarraySum1( int *arr, int n){
+//     int maxSum = INT_MIN;
+
+//     for ( int start = 0; start<n; start++){
+//         for (int end = start; end<n; end ++){
+//             int curSum =0;
+//             for (int i = start; i<=end; i++){
+//                 curSum += arr[i];
+//             }
+//             cout << curSum << ",";
+//             maxSum = max(maxSum,curSum);
+//         }
+//         cout<<endl;
+//     }
+//     cout << "maximum subarray sum = " << maxSum << endl;
+// }
+
+
+// int main(){
+//       int arr[5] ={2,-3,6,-5,4};
+//       int n = sizeof(arr) /sizeof(int);
+
+//       maxSubarraySum1(arr, n);
+//     return 0;
+// }
+
+
+// 2nd method better approach
+
+//  void maxSubarraySum2( int *arr, int n){
+//     int maxSum = INT_MIN;
+
+//     for ( int start = 0; start<n; start++){ // start =2
+//         int curSum =0;
+//         for (int end = start; end<n; end ++){ // end = 2,3,4,5
+//             curSum += arr[end];           
+//             maxSum = max(maxSum,curSum);
+//         }
+//     }
+//     cout << "maximum subarray sum = " << maxSum << endl;
+// }
+
+
+// int main(){
+//       int arr[5] ={2,-3,6,-5,4};
+//       int n = sizeof(arr) /sizeof(int);
+
+//       maxSubarraySum2(arr, n);
+//     return 0;
+// }
+
+
+
+// kadane's Algorithm
+
+//  void maxSubarraySum3( int *arr, int n){
+//     int maxSum = INT_MIN;
+//     int curSum = 0;
+
+//     for( int i =0; i<n; i++){
+//         curSum += arr[i];
+//         maxSum = max(curSum , maxSum);
+//         if (curSum <0){
+//             curSum=0;
+//         }
+//     }    
+//          cout << "maximum subarray sum = " << maxSum << endl;
+
+
+//     }
+
+//     int main(){
+//       int arr[5] ={2,-3,6,-5,4};
+//       int n = sizeof(arr) /sizeof(int);
+
+//       maxSubarraySum3(arr, n);
+//     return 0;
+// }
+
+
+// Buy and Sell stocks
+
+
+
+
+
+int main(){
+
+    return 0;
+}
